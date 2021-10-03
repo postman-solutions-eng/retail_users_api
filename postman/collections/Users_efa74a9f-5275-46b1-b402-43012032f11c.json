@@ -1,0 +1,474 @@
+{
+    "info": {
+        "_postman_id": "b0ff4aab-ee00-4308-9e2c-4ca19601abbd",
+        "name": "Users",
+        "description": "# Products - Endpoints for managing and retrieving products\n<img src=\"https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png\" alt=\"drawing\" width=\"30\" height=\"30\"/></img>\n\nThis collection includes api's for managing users as intended to contain core SCUM operations such as register, login, and update.",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Register",
+            "event": [
+                {
+                    "listen": "test",
+                    "script": {
+                        "id": "1d8c3325-b780-45d6-b3f2-fe063df36f86",
+                        "exec": [
+                            "var jsonData = pm.response.json();",
+                            "",
+                            "pm.test(\"Status code is 200\", function () {",
+                            "    pm.response.to.have.status(200);",
+                            "});",
+                            "",
+                            "pm.test(\"Expect status key to equal success\", function () {",
+                            "    pm.expect(jsonData.status).to.eql(\"success\");",
+                            "});"
+                        ],
+                        "type": "text/javascript"
+                    }
+                }
+            ],
+            "id": "3c5a0374-2aeb-48b5-8509-aa2c40bf6a4a",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "auth": {
+                    "type": "noauth"
+                },
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"email\": \"max@gmail.com\",\n    \"password\": \"rD%5dQ!2\"\n}"
+                },
+                "url": {
+                    "raw": "{{usersUrl}}/users/register/",
+                    "host": [
+                        "{{usersUrl}}"
+                    ],
+                    "path": [
+                        "users",
+                        "register",
+                        ""
+                    ]
+                },
+                "description": "TODO: Add Description"
+            },
+            "response": [
+                {
+                    "id": "ec411bce-afd5-42cc-85a2-a502c2517f66",
+                    "name": "200 - Success",
+                    "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "<string>"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"email\": \"max@gmail.com\",\n    \"password\": \"{{url}}\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{usersUrl}}/users/register",
+                            "host": [
+                                "{{usersUrl}}"
+                            ],
+                            "path": [
+                                "users",
+                                "register"
+                            ]
+                        }
+                    },
+                    "status": "OK",
+                    "code": 200,
+                    "_postman_previewlanguage": "json",
+                    "header": [
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                        }
+                    ],
+                    "cookie": [],
+                    "responseTime": null,
+                    "body": "{\n \"status\": \"success\"\n}"
+                }
+            ]
+        },
+        {
+            "name": "Login",
+            "event": [
+                {
+                    "listen": "test",
+                    "script": {
+                        "id": "8d06f6e1-5395-4b07-a544-36a188381d08",
+                        "exec": [
+                            "var jsonData = pm.response.json();",
+                            "",
+                            "pm.test(\"Status code is 200\", function () {",
+                            "    pm.response.to.have.status(200);",
+                            "});",
+                            "",
+                            "pm.test(\"Expect status key to equal success\", function () {",
+                            "    pm.expect(jsonData.status).to.eql(\"success\");",
+                            "});"
+                        ],
+                        "type": "text/javascript"
+                    }
+                }
+            ],
+            "id": "50e1e681-437e-4f4b-969f-a1b6d78bb767",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "auth": {
+                    "type": "noauth"
+                },
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"email\": \"max@gmail.com\",\n    \"password\": \"rD%5dQ!2\"\n}"
+                },
+                "url": {
+                    "raw": "{{usersUrl}}/users/login",
+                    "host": [
+                        "{{usersUrl}}"
+                    ],
+                    "path": [
+                        "users",
+                        "login"
+                    ]
+                },
+                "description": "Authorizes a user."
+            },
+            "response": [
+                {
+                    "id": "16497911-9fcc-4e40-ac42-565bf6115cf0",
+                    "name": "200 - Success",
+                    "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "<string>"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"email\": \"max@gmail.com\",\n    \"password\": \"rD%5dQ!2\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{usersUrl}}/users/login",
+                            "host": [
+                                "{{usersUrl}}"
+                            ],
+                            "path": [
+                                "users",
+                                "login"
+                            ]
+                        }
+                    },
+                    "status": "OK",
+                    "code": 200,
+                    "_postman_previewlanguage": "json",
+                    "header": [
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                        }
+                    ],
+                    "cookie": [],
+                    "responseTime": null,
+                    "body": "{\n \"status\": \"success\"\n}"
+                },
+                {
+                    "id": "0f7262d9-3719-4347-9000-269d7c463521",
+                    "name": "401 - Unauthorized",
+                    "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "<string>"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"email\": \"max@gmail.com\",\n    \"password\": \"{{url}}\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{usersUrl}}/users/login",
+                            "host": [
+                                "{{usersUrl}}"
+                            ],
+                            "path": [
+                                "users",
+                                "login"
+                            ]
+                        }
+                    },
+                    "status": "Unauthorized",
+                    "code": 401,
+                    "_postman_previewlanguage": "json",
+                    "header": [
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                        }
+                    ],
+                    "cookie": [],
+                    "responseTime": null,
+                    "body": "{\n \"status\": \"failed\",\n \"message\": \"unathorized\"\n}"
+                }
+            ]
+        },
+        {
+            "name": "Update",
+            "event": [
+                {
+                    "listen": "test",
+                    "script": {
+                        "id": "dd52d7d3-c42b-4421-93e3-60d11056eb42",
+                        "exec": [
+                            "var jsonData = pm.response.json();",
+                            "",
+                            "pm.test(\"Status code is 200\", function () {",
+                            "    pm.response.to.have.status(200);",
+                            "});",
+                            "",
+                            "pm.test(\"Expect status key to equal success\", function () {",
+                            "    pm.expect(jsonData.status).to.eql(\"success\");",
+                            "});"
+                        ],
+                        "type": "text/javascript"
+                    }
+                }
+            ],
+            "id": "a3f4c347-9f53-4592-aea7-a5cbe3633f46",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "auth": {
+                    "type": "noauth"
+                },
+                "method": "PUT",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"password\": \"aB$8kZ(0\"\n}"
+                },
+                "url": {
+                    "raw": "{{usersUrl}}/users/update?email=max@gmail.com",
+                    "host": [
+                        "{{usersUrl}}"
+                    ],
+                    "path": [
+                        "users",
+                        "update"
+                    ],
+                    "query": [
+                        {
+                            "key": "email",
+                            "value": "max@gmail.com",
+                            "description": "The user's email."
+                        }
+                    ]
+                },
+                "description": "For updating email or password."
+            },
+            "response": [
+                {
+                    "id": "d96e6c19-0af6-4da1-b7fc-ed2a7219eb4f",
+                    "name": "200 - Success",
+                    "originalRequest": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "<string>"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"password\": \"aB$8kZ(0\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{usersUrl}}/users/update?email=max@gmail.com",
+                            "host": [
+                                "{{usersUrl}}"
+                            ],
+                            "path": [
+                                "users",
+                                "update"
+                            ],
+                            "query": [
+                                {
+                                    "key": "email",
+                                    "value": "max@gmail.com"
+                                }
+                            ]
+                        }
+                    },
+                    "status": "OK",
+                    "code": 200,
+                    "_postman_previewlanguage": "json",
+                    "header": [
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                        }
+                    ],
+                    "cookie": [],
+                    "responseTime": null,
+                    "body": "{\n \"status\": \"success\"\n}"
+                }
+            ]
+        },
+        {
+            "name": "Get all user segments",
+            "event": [
+                {
+                    "listen": "test",
+                    "script": {
+                        "id": "9c6525c9-7b6d-45de-9ed6-ce40350720d6",
+                        "exec": [
+                            "var jsonData = pm.response.json();",
+                            "",
+                            "pm.test(\"Status code is 200\", function () {",
+                            "    pm.response.to.have.status(200);",
+                            "});",
+                            "",
+                            "pm.test(\"Expect a segments array\", function () {",
+                            "    pm.expect(jsonData).to.have.property(\"segments\");",
+                            "});",
+                            "",
+                            "pm.test(\"Expect items to have an ID and quantity\", function () {",
+                            "    for (var i = 0; i < jsonData.segments.length; i++) {",
+                            "        pm.expect(jsonData.segments[i]).to.include.all.keys(\"name\");",
+                            "    }",
+                            "});",
+                            "",
+                            "pm.test(\"Expect item name to be string\", function () {",
+                            "    for (var i = 0; i < jsonData.segments.length; i++) {",
+                            "        pm.expect(jsonData.segments[i].name).to.be.a('string');",
+                            "    }",
+                            "});"
+                        ],
+                        "type": "text/javascript"
+                    }
+                }
+            ],
+            "id": "c7308fd6-2871-4a0f-8196-49a61e22f2cb",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "auth": {
+                    "type": "noauth"
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{usersUrl}}/users/segments?id=7a848f03778ea5e30de4dc6850c6b67e",
+                    "host": [
+                        "{{usersUrl}}"
+                    ],
+                    "path": [
+                        "users",
+                        "segments"
+                    ],
+                    "query": [
+                        {
+                            "key": "id",
+                            "value": "7a848f03778ea5e30de4dc6850c6b67e",
+                            "description": "The user's account ID"
+                        }
+                    ]
+                },
+                "description": "Get all segments a user is a part of."
+            },
+            "response": [
+                {
+                    "id": "6f3ea5d6-c6ee-4ff5-85a4-74e8c72415ba",
+                    "name": "200 - Success",
+                    "originalRequest": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{usersUrl}}/users/segments?id=7a848f03778ea5e30de4dc6850c6b67e",
+                            "host": [
+                                "{{usersUrl}}"
+                            ],
+                            "path": [
+                                "users",
+                                "segments"
+                            ],
+                            "query": [
+                                {
+                                    "key": "id",
+                                    "value": "7a848f03778ea5e30de4dc6850c6b67e"
+                                }
+                            ]
+                        }
+                    },
+                    "status": "OK",
+                    "code": 200,
+                    "_postman_previewlanguage": "json",
+                    "header": [
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                        }
+                    ],
+                    "cookie": [],
+                    "responseTime": null,
+                    "body": "{\n \"segments\": [\n  {\n   \"name\": \"VIP shoppers\"\n  },\n  {\n   \"name\": \"Sale shoppers\"\n  }\n ]\n}"
+                }
+            ]
+        }
+    ],
+    "variable": [
+        {
+            "id": "25691c8f-d771-4095-8df8-f0768007801a",
+            "key": "baseUrl",
+            "value": "http://example.com/users",
+            "type": "string"
+        }
+    ]
+}
